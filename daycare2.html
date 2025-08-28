@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana Canada | Experimental Daycare Websites</title>
+    
+    <!-- Google Fonts: Playfair Display for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom CSS for a highly animated, experimental design */
+        :root {
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --color-dark-blue: #0A192F;
+            --color-brand-blue: #3B82F6;
+            --color-light-blue: #BFDBFE;
+            --color-bg-light: #F0F4F8;
+            --color-white: #FFFFFF;
+            --color-text: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg-light);
+            color: var(--color-text);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- Global Styles & Helpers --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            color: var(--color-dark-blue);
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--color-dark-blue);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            color: var(--color-dark-blue);
+            line-height: 1.2;
+        }
+
+        /* --- Scroll Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-dark-blue);
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #EBF2FF 0%, var(--color-bg-light) 100%);
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            text-align: center;
+        }
+        @media (min-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+            }
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 550px;
+            margin: 0 auto 2rem auto;
+        }
+        @media (min-width: 992px) {
+            .hero p {
+                margin-left: 0;
+            }
+        }
+        .hero-image-wrapper {
+            position: relative;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+
+        /* --- CTA Button --- */
+        .cta-button {
+            display: inline-block;
+            background: var(--color-brand-blue);
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 0 0 0 rgba(59, 130, 246, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4), 0 0 20px 10px rgba(59, 130, 246, 0);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 0 0 0 rgba(59, 130, 246, 0.3); }
+            70% { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 0 0 20px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3), 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+
+        /* --- Holistic Approach Section --- */
+        .holistic-approach { text-align: center; }
+        .pillars-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: -2rem;
+            margin: 4rem auto;
+        }
+        .pillar {
+            background: var(--color-white);
+            border: 2px solid var(--color-light-blue);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            width: 300px;
+            height: 250px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .pillar:nth-child(1) { transform: translateX(25%) rotate(-5deg); background: #EBF2FF; }
+        .pillar:nth-child(2) { z-index: 2; transform: scale(1.1); background: var(--color-white); }
+        .pillar:nth-child(3) { transform: translateX(-25%) rotate(5deg); background: #EBF2FF; }
+        .holistic-approach:hover .pillar {
+            transform: translateX(0) rotate(0) scale(1);
+        }
+        .pillar h3 { margin-top: 0; }
+
+        /* --- Core Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .service-card:hover {
+            transform: translateY(-10px) perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .service-card h3 { margin-top: 1rem; }
+        .service-card .icon {
+            width: 50px;
+            height: 50px;
+            color: var(--color-brand-blue);
+        }
+
+        /* --- Process Section --- */
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        .timeline-path {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-light-blue);
+            transform: translateX(-50%);
+        }
+        .timeline-progress {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            background: var(--color-brand-blue);
+            transform: translateX(-50%);
+            height: 0; /* Animated with JS */
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .timeline-item:nth-child(odd) .timeline-content { left: 0; }
+        .timeline-item:nth-child(even) .timeline-content { left: 55%; }
+        .timeline-dot {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color-light-blue);
+            border: 4px solid var(--color-bg-light);
+            transform: translateX(-50%);
+            transition: background-color 0.3s ease;
+        }
+        .timeline-item.visible .timeline-dot {
+            background-color: var(--color-brand-blue);
+        }
+
+        /* --- Post-Launch Section --- */
+        .post-launch-section {
+            position: relative;
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            overflow: hidden;
+        }
+        .post-launch-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        .post-launch-section h2 { color: var(--color-white); }
+        .post-launch-section p { color: var(--color-light-blue); }
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        /* --- "Beyond the Website" Service Galaxy --- */
+        .service-galaxy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .galaxy-card {
+            background-color: transparent;
+            min-height: 180px;
+            perspective: 1500px;
+            cursor: pointer;
+        }
+        .galaxy-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-style: preserve-3d;
+        }
+        .galaxy-card:hover .galaxy-card-inner {
+            transform: rotateY(180deg);
+        }
+        .galaxy-card-front, .galaxy-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .galaxy-card-front {
+            background: var(--color-white);
+        }
+        .galaxy-card-front h4 {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-dark-blue);
+            margin-top: 0.75rem;
+        }
+        .galaxy-card-front .icon {
+            width: 40px;
+            height: 40px;
+            color: var(--color-brand-blue);
+        }
+        .galaxy-card-back {
+            background: var(--color-brand-blue);
+            color: var(--color-white);
+            transform: rotateY(180deg);
+        }
+        .galaxy-card-back p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* --- Checklist Section --- */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (min-width: 992px) { .checklist-grid { grid-template-columns: 1fr 1fr; } }
+        .checklist h3 { 
+            font-family: var(--font-body); 
+            font-weight: 800; 
+            font-size: 1.75rem;
+            border-bottom: 3px solid var(--color-light-blue);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .feature-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease-out;
+        }
+        .feature-card:hover {
+            transform: translateX(0px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+        .checklist.visible .feature-card {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* Staggered animation for list items */
+        .checklist.visible .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .checklist.visible .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .checklist.visible .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .checklist.visible .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .checklist.visible .feature-card:nth-child(5) { transition-delay: 0.5s; }
+
+        .feature-card .icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            color: var(--color-brand-blue);
+            background: #EBF2FF;
+            border-radius: 50%;
+            padding: 8px;
+        }
+        .feature-card h4 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-dark-blue);
+            margin: 0 0 0.25rem 0;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* --- Final CTA --- */
+        .final-cta {
+            background: var(--color-dark-blue);
+            color: var(--color-white);
+            text-align: center;
+            border-radius: 30px;
+            margin: 0 1rem;
+        }
+        .final-cta h2 { color: var(--color-white); }
+        
+        /* --- Footer --- */
+        .site-footer {
+            background: var(--color-dark-blue);
+            color: var(--color-light-blue);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid h4 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        .footer-grid p, .footer-grid a {
+            color: var(--color-light-blue);
+            text-decoration: none;
+        }
+        .footer-grid a:hover {
+            color: var(--color-white);
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Nirvana Canada</a>
+            <a href="#contact" class="cta-button" style="padding: 0.75rem 1.5rem; box-shadow: none;">Request a Quote</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text reveal">
+                    <h1>Websites for Daycare Centres, Made Easy!</h1>
+                    <p>Attract More Families with a Professional Website That Ranks High and Converts Visitors into Enrollees.</p>
+                    <a href="#contact" class="cta-button">Begin Your Growth Journey</a>
+                </div>
+                <div class="hero-image-wrapper reveal">
+                    <img src="https://images.pexels.com/photos/1001914/pexels-photo-1001914.jpeg?_gl=1*1g0j0sk*_ga*MjAyNTYzNjM2MS4xNzU2MzkxODY2*_ga_8JE65Q40S6*czE3NTYzOTE4NjUkbzEkZzEkdDE3NTYzOTIzNTAkajU5JGwwJGgw">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DAYCARE WEBSITE SOLUTIONS -->
+        <section class="container holistic-approach reveal">
+            <h2>Design That Delights Parents, Marketing That Drives Enrollment</h2>
+            <p>A professional website is the heart of your daycare’s digital presence. It’s the first impression for new parents and the central hub for your existing community. At Nirvana Canada, we understand that a successful online presence requires more than just a beautiful design. It needs to be visible. That’s why our approach is holistic: we build stunning, user-friendly websites and integrate powerful digital marketing strategies from day one to ensure a steady stream of inquiries from local families.</p>
+        </section>
+
+        <!-- SECTION 3: CORE SERVICES -->
+        <section class="container reveal">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
+                <h2>Our Core Services: A Complete Growth Solution</h2>
+                <p>We provide an integrated suite of services designed to build your brand and fill your classrooms.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a3.375 3.375 0 00-2.684-2.684L11.25 18l1.938-.648a3.375 3.375 0 002.684-2.684L16.25 13.5l.648 1.938a3.375 3.375 0 002.684 2.684L21.75 18l-1.938.648a3.375 3.375 0 00-2.684 2.684z" /></svg><h3>Custom UI/UX Design</h3><p>We create an intuitive, parent-friendly design that makes your day care’s website a joy to navigate.</p></div>
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m3 0h3m-3 2.25l3 2.25-3 2.25M6.75 12a7.5 7.5 0 0115 0v.343a4.502 4.502 0 00-3.032 4.157l-.328 3.28a4.5 4.5 0 01-4.49 4.157H12a4.5 4.5 0 01-4.49-4.157l-.328-3.28A4.502 4.502 0 003.75 12.343V12a7.5 7.5 0 013-6" /></svg><h3>Website Development</h3><p>We build a fast, secure, and reliable website for your day care from the ground up.</p></div>
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg><h3>Website Maintenance & SSL</h3><p>We provide ongoing support to keep your day care’s website secure and running smoothly.</p></div>
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.5m0 0V12m0-1.5v-1.5m0 5.5a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM12 21a9 9 0 100-18 9 9 0 000 18z" /></svg><h3>Logo & Brand Strategy</h3><p>We design a memorable logo and brand strategy to make your day care stand out.</p></div>
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 1.085-1.085-1.085m1.085 1.085L5.25 16.5m2.25-11.25h9.75m-9.75 0c0 .414.336.75.75.75h3.375c.414 0 .75-.336.75-.75S10.26 3 9.875 3H6.75c-.414 0-.75.336-.75.75z" /></svg><h3>Digital Marketing & SEO</h3><p>We use SEO and marketing to help more local families find and choose your day care.</p></div>
+                <div class="service-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg><h3>Google Business Listing</h3><p>We set up your Google profile, ensuring your day care appears in local map searches.</p></div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROCESS -->
+        <section class="container reveal">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2>Your Path to a Successful Online Presence</h2>
+                <p>We facilitate the entire process, from initial concept to post-launch marketing, ensuring a seamless experience.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="timeline-path"></div>
+                <div class="timeline-progress"></div>
+                <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>1. Planning & Consultation</h3><p>We start by understanding your vision, brand, and enrollment goals to create a customized plan that covers both design and marketing.</p></div></div>
+                <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2. Website Design & Development</h3><p>Our team creates a custom design and develops a fully functional, secure, and fast website that serves as the foundation for your growth.</p></div></div>
+                <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>3. Testing & Launch</h3><p>We conduct rigorous testing to ensure a flawless user experience before launching your new website for the world to see.</p></div></div>
+                <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>4. Marketing & Growth</h3><p>From launch day forward, we implement and manage your SEO strategy to increase your online visibility and drive a consistent flow of inquiries.</p></div></div>
+            </div>
+             <div class="reveal" style="text-align: center; margin-top: 4rem;">
+                <a href="#contact" class="cta-button">Ready to Fill Your Classrooms?</a>
+            </div>
+        </section>
+        
+        <!-- SECTION 5: POST-LAUNCH SUPPORT -->
+        <section class="post-launch-section reveal">
+            <div class="parallax-bg"></div>
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2>Post-Launch Support</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Our partnership extends beyond the initial website launch, providing continuous marketing and creative support to ensure your daycare’s sustained growth. Our commitment to your success doesn’t end when your website goes live. We provide comprehensive post-launch support to ensure your daycare continues to grow its online presence and connect with new families. Our ongoing digital marketing services include advanced Search Engine Optimization (SEO) to keep you at the top of Google, targeted Google Ads and paid social media marketing to reach local parents, and active Social Media Management (SMO) to build an engaged and loyal online community.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: BEYOND THE WEBSITE -->
+        <section class="container reveal">
+             <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
+                <h2>Beyond the Website: Elevating Your Brand</h2>
+                <p>Beyond the fundamentals, we offer a wide range of specialized services to enhance your marketing, build your community, and ensure long-term growth.</p>
+            </div>
+            <div class="service-galaxy">
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg><h4>Website Migration</h4></div><div class="galaxy-card-back"><p>We handle website moves safely, protecting your daycare’s SEO rankings and online visibility.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5M15 15l5.25 5.25" /></svg><h4>Inbound Lead Generation</h4></div><div class="galaxy-card-back"><p>Our strategies turn your website into a magnet, attracting interested parents to your daycare.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.006 3 11.55c0 2.033.794 3.895 2.131 5.348l.894.894c.332.332.699.608 1.09.824l.058.031a12.01 12.01 0 003.825 1.5c.16.02.323.037.488.051" /></svg><h4>Social Media Management</h4></div><div class="galaxy-card-back"><p>We manage your social media to build a vibrant community around your daycare centre.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15h3a7.5 7.5 0 100-15h-3z" /><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 00-7.5 7.5v3a7.5 7.5 0 007.5 7.5m3-15V5.25m0 1.5V5.25m0 1.5v-1.5m0 0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" /></svg><h4>Paid Advertising</h4></div><div class="galaxy-card-back"><p>We run targeted ad campaigns to reach local families and fill your daycare’s open spots.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.776 48.776 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" /></svg><h4>Photography & Video</h4></div><div class="galaxy-card-back"><p>We capture your daycare’s joyful atmosphere with professional photography and engaging virtual tours.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg><h4>Content Writing</h4></div><div class="galaxy-card-back"><p>We write expert blog posts and resources to position your daycare as a trusted leader.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg><h4>Print & Brochure Design</h4></div><div class="galaxy-card-back"><p>We design beautiful brochures and print materials for your daycare’s tours and open houses.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg><h4>Parent Portal Development</h4></div><div class="galaxy-card-back"><p>We can build secure parent-only portals for newsletters, updates, and community engagement.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /></svg><h4>Reputation Management</h4></div><div class="galaxy-card-back"><p>We help your daycare gather positive reviews and manage your online reputation to build trust.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg><h4>Email & Newsletter Marketing</h4></div><div class="galaxy-card-back"><p>We create engaging email newsletters to connect with your daycare’s current and prospective families.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M12 21.75V19.5m-5.834-.166l1.591-1.591M3.75 10.5H6m-2.25 0a8.25 8.25 0 0014.474 4.288" /></svg><h4>Conversion Rate Optimization</h4></div><div class="galaxy-card-back"><p>We analyze and improve your website to turn more visitors into genuine enrollment inquiries.</p></div></div></div>
+                <div class="galaxy-card"><div class="galaxy-card-inner"><div class="galaxy-card-front"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg><h4>Analytics & Reporting</h4></div><div class="galaxy-card-back"><p>We provide clear reports, showing the success of your daycare’s marketing and growth strategies.</p></div></div></div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CHECKLIST -->
+        <section class="container reveal">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
+                <h2>Everything Your Daycare Website Needs to Succeed</h2>
+                <p>We equip your website with a complete set of features designed to attract new families and make your life easier.</p>
+            </div>
+            <div class="checklist-grid">
+                <div class="checklist reveal">
+                    <h3>For Attracting Parents</h3>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" /></svg><div><h4>High Google Rankings</h4><p>Foundational on-page SEO to help you rank in local search results.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg><div><h4>Local Map Visibility</h4><p>Full setup and optimization of your Google Business Profile.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg><div><h4>Perfect Mobile Experience</h4><p>A responsive design that works flawlessly on any device parents use.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.358-.58.672-.915.956a9.041 9.041 0 00-2.861 2.4c-.498.634-1.225 1.08-2.032 1.08h-1.344a2.25 2.25 0 01-2.122-1.328 4.5 4.5 0 00-8.25-3.165.75.75 0 01-1.086.654A5.25 5.25 0 012.25 12c0 2.899 2.351 5.25 5.25 5.25h1.05a2.25 2.25 0 012.122 1.328 4.5 4.5 0 008.25 3.165.75.75 0 011.086-.654A5.25 5.25 0 0121.75 12c0-1.623-.728-3.067-1.868-4.015" /></svg><div><h4>Trust-Building Testimonials</h4><p>Prominently showcase reviews from happy families.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.186 2.25 2.25 0 00-3.933 2.186z" /></svg><div><h4>Social Media Integration</h4><p>Connect your website to your social channels to build a community.</p></div></div>
+                </div>
+                 <div class="checklist reveal">
+                    <h3>For Your Operations:</h3>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.691v4.992h4.992" /></svg><div><h4>Effortless Updates</h4><p>An easy-to-use Content Management System (CMS) to add photos, news, and events.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg><div><h4>Rock-Solid Security</h4><p>SSL certification to protect your data and give parents peace of mind.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-1.5l-2.625 2.625M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><div><h4>Online Registration Forms</h4><p>Convenient forms for tour requests, waitlists, and enrollment inquiries.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.588 8.188a7.5 7.5 0 11-11.06-3.112z" /></svg><div><h4>Professional Branding</h4><p>Cohesive branding and logo integration for a polished look.</p></div></div>
+                    <div class="feature-card"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg><div><h4>Fast-Loading Pages</h4><p>A speedy website that keeps busy parents engaged.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="contact" class="container">
+            <div class="final-cta reveal">
+                <div style="padding: 4rem 2rem;">
+                    <h2>Ready to Become the Go-To Daycare in Your Area?</h2>
+                    <p>Let’s build a powerful online presence that attracts new families and supports your community. Based in Vancouver, we are proud to offer expert web design and digital marketing for daycare centres in Surrey, Burnaby, the Lower Mainland, and across Canada. Contact our experts today to see how we can help you achieve your enrollment goals.</p>
+                    <a href="#" class="cta-button" style="background: var(--color-white); color: var(--color-brand-blue);">REQUEST A FREE QUOTE TODAY</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4>Nirvana Canada</h4>
+                <p>Digital Growth Partners for Daycare Centres.</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>123 Daycare Lane<br>Vancouver, BC, Canada</p>
+                <a href="mailto:hello@nirvanacanada.com">hello@nirvanacanada.com</a>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nirvana Canada. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            const timeline = document.querySelector('.process-timeline');
+            if(timeline) {
+                const timelineProgress = document.querySelector('.timeline-progress');
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                window.addEventListener('scroll', () => {
+                    const timelineRect = timeline.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (timelineRect.top < windowHeight && timelineRect.bottom > 0) {
+                        let scrollPercent = (windowHeight - timelineRect.top) / (windowHeight + timelineRect.height);
+                        scrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
+                        timelineProgress.style.height = `${scrollPercent * 100}%`;
+                        
+                        timelineItems.forEach(item => {
+                            const itemRect = item.getBoundingClientRect();
+                            if(itemRect.top < windowHeight * 0.75) {
+                                item.classList.add('visible');
+                            }
+                        });
+                    }
+                });
+            }
+
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    const rotateX = -y / 25;
+                    const rotateY = x / 25;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
