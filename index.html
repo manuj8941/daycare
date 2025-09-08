@@ -3,397 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exceptional Daycare Websites</title>
+    <title>Google Ads for Vancouver Businesses | Nirvana Canada</title>
+    <meta name="description" content="Get found first on Google. We help Vancouver businesses get more customers with expert Google Ads management. Get your free marketing plan today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic Body Styling */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+        /* CSS Reset and Basic Setup */
+        :root {
+            --primary-color: #0d6efd; /* A professional blue */
+            --secondary-color: #ffc107; /* A vibrant yellow for attention */
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --text-color: #495057;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --transition-speed: 0.3s ease;
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-        }
-
-        /* Container for content */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Headings */
-        h1, h2 {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        h1 {
-            font-size: 2.5em;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-top: 60px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            text-align: center;
-            color: #7f8c8d;
-            font-weight: 400;
-        }
-
-        /* Paragraphs and Text */
-        p {
-            text-align: center;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* Buttons */
-        .cta-button {
-            display: block;
-            width: fit-content;
-            margin: 30px auto;
-            background-color: #e74c3c;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 5px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #c0392b;
-        }
-
-        /* Feature/Point Boxes */
-        .points-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            list-style-type: none;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .point-box {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
             background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .point-box strong {
-            color: #3498db;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.1em;
+        /* Utility Classes */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Add a bit of spacing for the emoji */
-        .point-box strong span, .step-item strong span {
-            margin-right: 8px;
+        section {
+            padding: 80px 0;
+        }
+        
+        section:nth-of-type(even) {
+            background-color: var(--light-color);
         }
 
-        /* --- Integrated styles for the creative steps section --- */
-        .steps-timeline {
-            /* Define color variables for easy customization */
-            --line-color: #3498db;
-            --dot-color: #e74c3c;
-            --background-color: #f9f9f9; /* Should match the body background */
-            --text-color: #555;
-
-            display: flex;
-            justify-content: space-between;
-            list-style-type: none;
-            padding: 0;
-            margin: 70px 0;
-            counter-reset: steps-counter; /* Initialize a counter for steps */
-            position: relative;
+        h1, h2, h3 {
+            color: var(--dark-color);
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        /* The connecting horizontal line */
-        .steps-timeline::before {
-            content: '';
-            position: absolute;
-            top: 15px; /* Vertically center on the dot */
-            left: calc(100% / 10); /* Adjusted for 5 steps */
-            right: calc(100% / 10); /* Adjusted for 5 steps */
-            height: 4px;
-            background-color: var(--line-color);
-            z-index: 0; /* Place behind the dots */
-        }
-
-        .step-item {
-            flex: 1; /* Distribute space evenly */
-            position: relative;
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: -10px auto 40px auto;
             text-align: center;
-            padding: 45px 15px 0 15px; /* Top padding to make space for the dot */
-            min-width: 150px;
-        }
-
-        .step-item p {
-            font-size: 0.95em;
+            font-weight: 400;
             color: var(--text-color);
         }
 
-        /* The numbered dot on the timeline */
-        .step-item::before {
-            counter-increment: steps-counter; /* Increment the counter for each step */
-            content: counter(steps-counter); /* Display the counter value */
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1; /* Place in front of the line */
+        p {
+            margin-bottom: 15px;
+        }
 
-            /* Dot styling */
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-speed);
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            padding: 20px 0;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        
+        .navbar .cta-button {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(13, 110, 253, 0.05), rgba(13, 110, 253, 0.05)), #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero-badges {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        /* --- Grid Layouts for Sections --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition-speed);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .fact-box {
+            grid-column: 1 / -1; /* Span full width */
+            background: #e7f5ff;
+            color: var(--dark-color);
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 2px solid #bde0ff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .fact-box p {
+            margin: 0;
+        }
+        
+        /* --- Services / Comparison Grid Section --- */
+        .comparison-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr repeat(5, 1.5fr);
+            text-align: center;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            background: #fff;
+        }
+
+        .comparison-grid > div {
+            padding: 20px 15px;
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: var(--dot-color);
-            color: white;
-            font-weight: bold;
-            border: 4px solid var(--background-color); /* Creates a clean break in the line */
-            transition: transform 0.3s ease;
         }
 
-        .step-item:hover::before {
-             transform: translateX(-50%) scale(1.15);
+        .comparison-grid .grid-header {
+            background-color: var(--light-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-color);
         }
 
-        .step-item strong {
-            display: block;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            width: 100%;
-            margin-top: 30px;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 15px;
+        .comparison-grid .grid-label {
+            font-weight: 600;
+            background-color: var(--light-color);
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            justify-content: flex-start;
+        }
+        
+        /* --- Testimonials Section --- */
+        #proof .proof-placeholder {
+            text-align: center;
+            margin-top: 50px;
+            padding: 60px;
+            border: 2px dashed #ccc;
+            border-radius: var(--border-radius);
+            background-color: var(--light-color);
+        }
+        
+        .proof-placeholder p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        /* --- 5-Step Plan --- */
+        .process-steps {
+            list-style: none;
+            margin-top: 50px;
+            counter-reset: step-counter;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #e0e7ff;
         }
 
-        .comparison-table th {
-            background-color: #3498db;
+        .process-steps li {
+            position: relative;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .process-steps li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: -50px;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
             color: white;
-            font-size: 1.2em;
-            width: 50%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 4px solid var(--light-color);
+        }
+        
+        /* --- FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0 auto;
+        }
+        
+        details {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            transition: var(--transition-speed);
+        }
+        
+        details[open] {
+            box-shadow: var(--box-shadow);
         }
 
-        .comparison-table td {
-            background-color: #fff;
+        summary {
+            font-weight: 600;
+            padding: 20px;
+            cursor: pointer;
+            list-style: none; /* Remove default marker */
+            position: relative;
+            color: var(--dark-color);
         }
 
-        .comparison-table td:first-child {
-            border-right: 1px solid #ddd;
+        summary::-webkit-details-marker {
+            display: none; /* For Chrome/Safari */
+        }
+        
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            transition: transform 0.2s ease-in-out;
         }
 
-        /* Footer section */
-        .footer-cta {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-radius: 8px;
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        /* --- Final CTA --- */
+        .final-cta {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .final-cta h2 {
+            color: #fff;
+        }
+        
+        /* Override for the subtitle in the final CTA to ensure visibility */
+        .final-cta p.section-subtitle {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-color);
+        }
+        
+        /* --- Animations --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        .footer-cta h2 {
-            color: white;
-            border-bottom: none;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .comparison-grid { display: none; } /* hide grid on tablet/mobile */
+            .card.mobile-service { display: block; }
         }
 
-        .footer-cta p {
-            color: #ecf0f1;
+        @media (min-width: 993px) {
+            .card.mobile-service { display: none; } /* hide mobile cards on desktop */
         }
-
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 900px) {
-            .steps-timeline {
-                flex-direction: column;
-                margin: 40px 0;
-            }
-
-            /* The connecting line becomes vertical */
-            .steps-timeline::before {
-                left: 15px; /* Position on the left */
-                right: auto;
-                top: 30px;
-                bottom: 80px;
-                width: 4px;
-                height: auto; /* Let the line grow with the content */
-            }
-
-            .step-item {
-                text-align: left; /* Align text to the left of the line */
-                padding: 15px 0 30px 45px; /* Add left padding for the line */
-                min-width: 0;
-            }
-
-            /* Position dot to the left on the vertical line */
-            .step-item::before {
-                top: 12px;
-                left: 0;
-                transform: none; /* Reset transform */
-            }
-
-            .step-item:hover::before {
-                transform: scale(1.15);
-            }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Your Daycare is Exceptional. Your Website Should Be Too.</h1>
-            <p>We build simple, professional websites for daycare centres. Our sites attract local families, build trust instantly, and make the enrollment process easy for everyone.</p>
-            <a href="#" class="cta-button">Get My Free Quote</a>
-        </header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Nirvana Canada</a>
+            <a href="#contact" class="cta-button">Get My Free Plan</a>
+        </div>
+    </nav>
 
-        <section>
-            <h2>The Complete Website Solution for Your Centre</h2>
-            <h3>All The Features You Need, Built Right In</h3>
-            <p>Your website will have everything required to impress new parents and support your current families.</p>
-            <ul class="points-grid">
-                <li class="point-box"><strong><span>🎨</span>Logo & Branding</strong> A professional look that reflects the quality of your care.</li>
-                <li class="point-box"><strong><span>💡</span>Our Philosophy</strong> Share your unique mission, values, and teaching approach.</li>
-                <li class="point-box"><strong><span>👩‍🏫</span>Staff Bios</strong> Introduce your caring teachers to build a personal connection.</li>
-                <li class="point-box"><strong><span>⭐</span>Testimonials & Reviews</strong> Let happy parents tell your story for you.</li>
-                <li class="point-box"><strong><span>📚</span>Curriculum Details</strong> Clearly explain your educational programs and goals.</li>
-                <li class="point-box"><strong><span>🖼️</span>Photo & Video Gallery</strong> Show parents a clean, safe, and happy environment.</li>
-                <li class="point-box"><strong><span>📹</span>Virtual Tour</strong> Let families tour your centre from their own home.</li>
-                <li class="point-box"><strong><span>💰</span>Tuition & Fees</strong> Provide clear, upfront pricing information.</li>
-                <li class="point-box"><strong><span>📝</span>Enrollment Process</strong> A simple, step-by-step guide to signing up.</li>
-                <li class="point-box"><strong><span>❓</span>FAQ Page</strong> Instantly answer the most common parent questions.</li>
-                <li class="point-box"><strong><span>📰</span>Blog & Parent Resources</strong> Be the expert local families trust.</li>
-                <li class="point-box"><strong><span>📞</span>Contact Us Page</strong> A map, phone number, and hours, all in one place.</li>
-                <li class="point-box"><strong><span>💻</span>Online Inquiry Form</strong> Make it easy for parents to ask questions 24/7.</li>
-                <li class="point-box"><strong><span>🔒</span>Parent Login Portal</strong> A private, secure area for enrolled families.</li>
-                <li class="point-box"><strong><span>💳</span>Online Tuition Payment</strong> Get paid on time, every time, with easy online payments.</li>
-                <li class="point-box"><strong><span>📅</span>Events & Holidays Calendar</strong> Keep everyone informed about closures and events.</li>
-                <li class="point-box"><strong><span>📄</span>Downloadable Documents</strong> Provide handbooks and forms in one convenient place.</li>
-                <li class="point-box"><strong><span>📱</span>Mobile-Responsive Design</strong> Looks perfect on any phone, tablet, or computer.</li>
-                <li class="point-box"><strong><span>✅</span>SSL Certificate (HTTPS)</strong> Guarantees your website is secure for all visitors.</li>
-                <li class="point-box"><strong><span>📧</span>Newsletter Signup Form</strong> Grow your list of interested local families.</li>
-                <li class="point-box"><strong><span>👍</span>Social Media Integration</strong> Connect your website to your Facebook or Instagram.</li>
-            </ul>
+    <header class="hero">
+        <div class="container">
+            <h1 class="fade-in">Get Found First. Get Customers Fast.</h1>
+            <p class="fade-in">
+                We create smart online ads that put your business right at the top of Google, helping you get more calls, more leads, and more sales.
+            </p>
+            <a href="#contact" class="cta-button fade-in">Get My Free Online Marketing Plan</a>
+            <div class="hero-badges fade-in">
+                <span>🏆 Trusted by Locals</span>
+                <span>⭐ Google Premier Partner</span>
+                <span>✅ Certified Experts</span>
+                <span>📍 Serving Vancouver, Surrey & The Lower Mainland</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="missing-out">
+            <div class="container">
+                <h2 class="fade-in">Why You’re Missing Out</h2>
+                <p class="section-subtitle fade-in">It’s a tough world out there, and if you’re not visible, you’re missing out.</p>
+                <div class="grid">
+                    <div class="card fade-in">
+                        <h3><span>👥</span>Competitors Are Taking Your Customers</h3>
+                        <p>If you’re not visible at the top of Google, they are. Your ideal customers are finding them first.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <h3><span>🔍</span>Your Best Customers Can’t Find You</h3>
+                        <p>A staggering 65% of people with high commercial intent click on Google Ads. You're invisible to them.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <h3><span>💸</span>Waiting Costs You Sales</h3>
+                        <p>Every month of delay is another month of lost leads, lost sales, and lost revenue for your business.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <h3><span>📞</span>Quiet Phones = Missed Business</h3>
+                        <p>In today's market, a quiet phone line means your competition's is ringing. Each missed call is a customer gone forever.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- UPDATED STEPS SECTION -->
-        <section>
-            <h2>Our 6-Step Path to a Standout Website</h2>
-            <h3>From First Call to Full Enrollment</h3>
-            <p>Our process is simple and transparent. We handle all the technical work so you can focus on your centre.</p>
-            <ol class="steps-timeline">
-                <li class="step-item">
-                    <strong><span>💬</span>Step 1 Discovery & Vision</strong>
-                    <p>We start with a simple conversation to understand your daycare’s unique story, your community, and your enrollment goals.</p>
-                </li>
-                <li class="step-item">
-                    <strong><span>🎨</span>Step 2 Strategy & Custom Design</strong>
-                    <p>We create a clear blueprint for your website’s structure and flow, then our designers craft a beautiful, custom visual that captures the unique spirit of your centre.</p>
-                </li>
-                <li class="step-item">
-                    <strong><span>🛠️</span>Step 3 Development & Build</strong>
-                    <p>Once you approve the design, we build a fast, secure, and mobile-friendly website from the ground up.</p>
-                </li>
-                <li class="step-item">
-                    <strong><span>🚀</span>Step 4 Final Review & Launch</strong>
-                    <p>We show you the finished website for your final approval. After your green light, we handle everything to get it live.</p>
-                </li>
-                <li class="step-item">
-                    <strong><span>🌱</span>Step 5 Growth & Ongoing Support</strong>
-                    <p>Our partnership continues after launch. We provide support and marketing to increase your visibility and keep inquiries coming.</p>
-                </li>
-            </ol>
+        <section id="why-it-works">
+            <div class="container">
+                <h2 class="fade-in">Immediate Growth with Google Ads</h2>
+                <p class="section-subtitle fade-in">Put your business at the top of Google, instantly.</p>
+                <div class="grid">
+                    <div class="card fade-in"><h3><span>⚡️</span>Get Seen Instantly</h3><p>Your ads can appear at the top of Google today, not months from now.</p></div>
+                    <div class="card fade-in"><h3><span>🎯</span>Reach Ready-to-Buy Customers</h3><p>Connect with people who are actively searching for your exact services right now.</p></div>
+                    <div class="card fade-in"><h3><span>📍</span>Target Local Vancouver Customers</h3><p>Reach customers in your specific neighbourhood, city, or the entire Lower Mainland.</p></div>
+                    <div class="card fade-in"><h3><span>💰</span>Control Your Budget Completely</h3><p>You set your own daily budget and can pause or adjust it at any time.</p></div>
+                    <div class="card fade-in"><h3><span>🖱️</span>Only Pay for Real Clicks</h3><p>You only spend money when an interested person actually clicks on your ad.</p></div>
+                    <div class="card fade-in"><h3><span>🥇</span>Outrank Your Competitors</h3><p>Position your business above your competition, even if they are bigger than you.</p></div>
+                    <div class="card fade-in"><h3><span>📈</span>Track Every Single Result</h3><p>Know exactly where your leads come from and what your return on investment is.</p></div>
+                    <div class="card fade-in"><h3><span>🤝</span>Build Trust and Authority</h3><p>Just being seen at the top of search results builds brand recognition and credibility.</p></div>
+                    <div class="card fade-in"><h3><span>📲</span>Get More Phone Calls</h3><p>Run special ads that allow customers to call your business directly from Google.</p></div>
+                    <div class="card fade-in"><h3><span>🔄</span>Reconnect with Past Visitors</h3><p>Bring back interested website visitors who didn’t purchase on their first visit.</p></div>
+                    <div class="fact-box fade-in">
+                        <p>💡 Fact: Businesses on average make $2 in revenue for every $1 they spend on Google Ads.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="difference">
+            <div class="container">
+                <h2 class="fade-in">The Nirvana Canada Difference</h2>
+                <p class="section-subtitle fade-in">Our smart, tech-driven approach ensures every dollar you spend is working hard to grow your business.</p>
+                <div class="grid">
+                     <div class="card fade-in"><h3><span>🕵️</span>Deep Competitor Analysis</h3><p>We analyze your top competitors, find their weaknesses, and create a smarter strategy to outperform them.</p></div>
+                     <div class="card fade-in"><h3><span>🧑‍💻</span>Pinpoint Audience Targeting</h3><p>We go beyond keywords to target customers by their location, interests, and online behaviour for maximum impact.</p></div>
+                     <div class="card fade-in"><h3><span>🔑</span>Profitable Keyword Research</h3><p>Our tools uncover the “money” keywords your best customers are using to find businesses just like yours.</p></div>
+                     <div class="card fade-in"><h3><span>✍️</span>Compelling Ad Copywriting</h3><p>We write clear, persuasive ads that connect with your audience and make them choose you over the competition.</p></div>
+                     <div class="card fade-in"><h3><span>🤖</span>AI-Powered Smart Bidding</h3><p>Our smart systems work 24/7 to get you the best possible price for each click, stretching your ad budget further.</p></div>
+                     <div class="card fade-in"><h3><span>🖥️</span>Landing Page Optimization</h3><p>We ensure the page your visitors land on is clear and persuasive, making it easy for them to become a customer.</p></div>
+                     <div class="card fade-in"><h3><span>🛡️</span>Wasteful-Spend Prevention</h3><p>We actively block irrelevant search terms to ensure you only pay for clicks from people who are genuinely interested.</p></div>
+                     <div class="card fade-in"><h3><span>📊</span>Clear Performance Tracking</h3><p>We track every call, form fill, and sale, so you can see exactly how your advertising dollars are performing.</p></div>
+                     <div class="card fade-in"><h3><span>📄</span>Transparent & Simple Reports</h3><p>You get easy-to-understand reports focused on what matters: your new leads and your return on investment.</p></div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>More Than a Website. Your Growth Partner.</h2>
-            <h3>Additional Services to Make You the #1 Choice</h3>
-            <p>We offer a full suite of marketing services to make your daycare the first choice for parents in your area.</p>
-             <ul class="points-grid">
-                <li class="point-box"><strong><span>🔍</span>Search Engine Optimization (SEO)</strong> We use proven strategies to get you to the top of Google when parents search for “daycare near me.”</li>
-                <li class="point-box"><strong><span>📍</span>Google Business Profile Optimization</strong> We’ll manage your Google Maps listing to ensure you show up with a 5-star reputation, accurate hours, and engaging photos.</li>
-                <li class="point-box"><strong><span>📢</span>Paid Advertising (Google & Facebook Ads)</strong> Need to fill spots fast? We run targeted ad campaigns that reach local parents who are actively looking for childcare right now.</li>
-                <li class="point-box"><strong><span>💬</span>Social Media Management</strong> We build a vibrant parent community on Facebook and Instagram, sharing the moments that make your centre special and engaging with followers.</li>
-                <li class="point-box"><strong><span>✍️</span>Content Writing Service</strong> Too busy to blog? Our team will write helpful articles for your website that attract parents and establish you as a local childcare expert.</li>
-                <li class="point-box"><strong><span>✨</span>Online Reputation Management</strong> We help you gather more positive reviews on Google, Facebook, and other important sites, and professionally manage your online reputation.</li>
-                <li class="point-box"><strong><span>💌</span>Email & Newsletter Marketing</strong> We design and send beautiful monthly newsletters to keep your current and prospective families engaged, informed, and connected.</li>
-                <li class="point-box"><strong><span>📸</span>Professional Photography & Video</strong> Capture the true joy of your daily activities. We offer professional photoshoots and engaging virtual tour videos to make your centre shine online.</li>
-                <li class="point-box"><strong><span>🎨</span>Logo Design & Brand Identity</strong> Whether you’re new or need a refresh, we can design a warm, memorable logo and a complete brand identity for your centre.</li>
-                <li class="point-box"><strong><span>📄</span>Brochure & Print Design</strong> Get professionally designed flyers, posters, and handbooks for open houses, parent tours, and community events.</li>
-                <li class="point-box"><strong><span>🛡️</span>Website Maintenance & Security</strong> Enjoy total peace of mind with our ongoing support packages that handle security, backups, and technical updates, so your site is always safe and running smoothly.</li>
-                <li class="point-box"><strong><span>📊</span>Analytics & Monthly Reporting</strong> Receive a simple, easy-to-read report each month showing how your website is performing, where new inquiries are coming from, and how you are growing.</li>
-                <li class="point-box"><strong><span>📈</span>Conversion Rate Optimization (CRO)</strong> We analyze visitor behavior on your site and make data-driven improvements to turn more of your website traffic into genuine enrollment inquiries.</li>
-                <li class="point-box"><strong><span>🔗</span>Digital Outreach & Link Building</strong> To boost your site’s authority, we work to get your daycare featured on trusted local parenting blogs, community websites, and online directories.</li>
-                <li class="point-box"><strong><span>🎉</span>Event Promotion Packages</strong> Planning an open house? We create a complete digital campaign—including a landing page, social media ads, and email blasts—to ensure a great turnout.</li>
-                <li class="point-box"><strong><span>📱</span>SMS Text Message Alerts</strong> Implement a text messaging system to send parents urgent alerts (like weather closures) or friendly reminders about upcoming events.</li>
-            </ul>
+        <section id="services">
+            <div class="container">
+                <h2 class="fade-in">Nirvana Canada’s Complete Advertising Plan</h2>
+                <p class="section-subtitle fade-in">Our expertise covers the full spectrum of paid advertising to ensure you’re visible wherever your customers are.</p>
+                
+                <!-- Desktop Comparison Grid -->
+                <div class="comparison-grid fade-in">
+                    <div class="grid-header"></div>
+                    <div class="grid-header">🔍<br>Search Ads</div>
+                    <div class="grid-header">🛍️<br>Shopping Ads</div>
+                    <div class="grid-header">🖼️<br>Display Ads</div>
+                    <div class="grid-header">▶️<br>YouTube Ads</div>
+                    <div class="grid-header">🔄<br>Remarketing Ads</div>
+                    
+                    <div class="grid-label">Think of it as...</div>
+                    <div>Raising a hand when a customer asks</div>
+                    <div>A digital storefront window</div>
+                    <div>A billboard on the digital highway</div>
+                    <div>A TV commercial, but smarter</div>
+                    <div>A friendly follow-up call</div>
+
+                    <div class="grid-label">What it looks like</div>
+                    <div>Simple text ads at the top of Google</div>
+                    <div>Ads with a product picture & price</div>
+                    <div>Image-based banner ads on websites</div>
+                    <div>Short video ads</div>
+                    <div>Ads that “follow” past website visitors</div>
+
+                    <div class="grid-label">Customer’s Mindset</div>
+                    <div>“I have a problem and need to solve it now.”</div>
+                    <div>“I want to buy a specific item.”</div>
+                    <div>“I’m just browsing the web.”</div>
+                    <div>“I’m here to be entertained.”</div>
+                    <div>“I’ve seen this company before...”</div>
+
+                    <div class="grid-label">Best for...</div>
+                    <div>Getting immediate calls and sales leads.</div>
+                    <div>E-commerce stores selling physical products.</div>
+                    <div>Building general brand awareness.</div>
+                    <div>Showing your service or product in action.</div>
+                    <div>Bringing back people who didn’t buy.</div>
+                    
+                    <div class="grid-label">Key Strength</div>
+                    <div>Timing. Actively looking for you.</div>
+                    <div>Visuals. See product before clicking.</div>
+                    <div>Reach. Seen on millions of websites.</div>
+                    <div>Storytelling. Connect emotionally.</div>
+                    <div>Familiarity. A warm audience.</div>
+                </div>
+
+                <!-- Mobile Cards -->
+                <div class="grid">
+                    <div class="card mobile-service fade-in"><h3><span>🔍</span>Search Ads</h3><p><strong>Looks like:</strong> Simple text ads at the top of Google.<br><strong>Customer Mindset:</strong> "I need to solve a problem now."<br><strong>Best for:</strong> Getting immediate calls and sales leads.</p></div>
+                    <div class="card mobile-service fade-in"><h3><span>🛍️</span>Shopping Ads</h3><p><strong>Looks like:</strong> Ads with a product picture & price.<br><strong>Customer Mindset:</strong> "I want to buy a specific item."<br><strong>Best for:</strong> E-commerce stores selling physical products.</p></div>
+                    <div class="card mobile-service fade-in"><h3><span>🖼️</span>Display Ads</h3><p><strong>Looks like:</strong> Image-based banner ads on websites.<br><strong>Customer Mindset:</strong> "I'm just browsing the web."<br><strong>Best for:</strong> Building general brand awareness.</p></div>
+                    <div class="card mobile-service fade-in"><h3><span>▶️</span>YouTube Ads</h3><p><strong>Looks like:</strong> Short video ads.<br><strong>Customer Mindset:</strong> "I'm here to be entertained."<br><strong>Best for:</strong> Showing your service or product in action.</p></div>
+                    <div class="card mobile-service fade-in"><h3><span>🔄</span>Remarketing Ads</h3><p><strong>Looks like:</strong> Ads that “follow” past website visitors.<br><strong>Customer Mindset:</strong> "I've seen this company before..."<br><strong>Best for:</strong> Bringing back people who didn’t buy.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proof">
+            <div class="container">
+                <h2 class="fade-in">Proof That Our Approach Works</h2>
+                <p class="section-subtitle fade-in">Real Results for Local Businesses</p>
+                <div class="proof-placeholder fade-in">
+                    <p><strong>{Placeholder Slider here}</strong><br>Real testimonials, case studies, or screenshots of results would be displayed here to build trust and social proof.</p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Everything Your Daycare Website Needs to Succeed</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>For Attracting New Families</th>
-                        <th>For Simplifying Your Operations</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>✓ High Google Rankings</td>
-                        <td>✓ Easy Website Updates</td>
-                    </tr>
-                    <tr>
-                        <td>✓ Perfect Mobile Experience</td>
-                        <td>✓ Online Registration & Inquiry Forms</td>
-                    </tr>
-                    <tr>
-                        <td>✓ Parent Testimonials Showcase</td>
-                        <td>✓ Secure & Reliable Hosting</td>
-                    </tr>
-                    <tr>
-                        <td>✓ Clear Program & Fee Info</td>
-                        <td>✓ Online Tuition Payment</td>
-                    </tr>
-                    <tr>
-                        <td>✓ Simple Tour Scheduling</td>
-                        <td>✓ A Single Place for All Documents</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section id="plan">
+            <div class="container">
+                <h2 class="fade-in">Nirvana Canada’s Simple, 5-Step Process</h2>
+                <p class="section-subtitle fade-in">Your Clear Path to Getting More Customers</p>
+                <ol class="process-steps fade-in">
+                    <li><h3>We Listen & Plan</h3><p>First, we sit down with you to understand your business and your goals. We’ll look at what you’re doing now and find ways to improve.</p></li>
+                    <li><h3>We Create Your AI-Powered Strategy</h3><p>We’ll present you with a clear, easy-to-understand plan showing you exactly how we’ll get you more customers.</p></li>
+                    <li><h3>We Build & Launch Your Ads</h3><p>Our team gets to work creating and launching your new ad campaigns.</p></li>
+                    <li><h3>We Make Your Ads Better Every Day</h3><p>We don’t “set it and forget it.” We check on your ads every day, making small adjustments to get you even better results.</p></li>
+                    <li><h3>We Send You Clear Reports</h3><p>You’ll get a simple report each month showing you how your ads are doing, how many new leads you got, and how your business is growing.</p></li>
+                </ol>
+            </div>
         </section>
 
-        <footer class="footer-cta">
-            <h2>Ready to Be the Go-To Daycare in Your Area?</h2>
-            <p>Ready to grow your daycare in Vancouver or Surrey? Let’s build a website that works as hard as you do. The first step is a simple, no-pressure chat about your goals.</p>
-            <a href="#" class="cta-button">GET MY FREE QUOTE NOW</a>
-        </footer>
+        <section id="faq">
+            <div class="container">
+                <h2 class="fade-in">Your Questions, Answered</h2>
+                <p class="section-subtitle fade-in">We know that investing in online advertising can bring up a few questions. Here are some honest and simple answers to help you feel confident.</p>
+                <div class="faq-container fade-in">
+                    <details>
+                        <summary>Q. What’s a realistic starting budget for a small business in Vancouver?</summary>
+                        <div class="faq-answer">
+                            <p>A. You are in complete control of the budget. For a business that’s serious about growth in Vancouver, a good starting point is typically between $1,000 to $2,000 per month in ad spend. Our main job is to make every single dollar of that budget work as hard as possible for you.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. Where does my money actually go?</summary>
+                        <div class="faq-answer">
+                            <p>It’s simple! Your money is split into two parts. The “ad spend” goes directly to Google to pay for the clicks on your ads. Our “management fee” is for our team of experts who work every day to make sure that ad spend turns into real customers.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. Am I locked into a long-term contract?</summary>
+                        <div class="faq-answer">
+                            <p>Not at all. We don’t believe in scary, long-term contracts. We start with a 3-month plan to give us time to get you great results. After that, it’s a simple month-to-month service. We want to earn your business every month.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. I tried Google Ads myself and it didn’t work. Why is this different?</summary>
+                        <div class="faq-answer">
+                            <p>That’s a very common story. The difference is that this is all we do! We use our experience and smart technology to avoid the common mistakes that waste money. We focus on building campaigns that are designed to find customers, not just get clicks.</p>
+                        </div>
+                    </details>
+                     <details>
+                        <summary>Q. What kind of ‘results’ should I actually expect?</summary>
+                        <div class="faq-answer">
+                            <p>We focus on the results that actually grow your business: more phone calls, more quote requests, and more sales. We don’t get distracted by flashy numbers that don’t help your bottom line.</p>
+                        </div>
+                    </details>
+                     <details>
+                        <summary>Q. Can I really compete with businesses that have huge budgets?</summary>
+                        <div class="faq-answer">
+                            <p>Yes! The great thing about Google Ads is that it’s not always about who spends the most. Google rewards ads that are the most helpful and relevant to the person searching. We can often win by being smarter, not just by spending more.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. Do I need a special website for these ads to work?</summary>
+                        <div class="faq-answer">
+                            <p>Sending visitors to a focused page works much better than sending them to a general homepage. This is called a “landing page.” If you don’t have one, don’t worry at all—we’ll guide you and help you get exactly what you need.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. What’s the real difference between SEO and Google Ads?</summary>
+                        <div class="faq-answer">
+                            <p>Think of it this way: SEO is like buying a house—it’s a fantastic long-term investment. Google Ads is like renting a perfect storefront on a busy street—you get business and foot traffic immediately. They work best when you do both!</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. Who owns the Google Ads account?</summary>
+                        <div class="faq-answer">
+                            <p>You do, always. It’s your account and your data. We believe in total transparency, so you will always have full ownership and access to everything.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Q. Why should I choose your agency over a cheaper freelancer?</summary>
+                        <div class="faq-answer">
+                            <p>With us, you get a whole team of certified experts, access to powerful advertising software, and the peace of mind that comes with a Google Premier Partner. We provide a level of support and expertise that’s hard for a single person to match.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <section id="contact" class="final-cta">
+            <div class="container">
+                 <h2 class="fade-in">Ready to Get Started?</h2>
+                 <p class="section-subtitle fade-in">Competitors from Surrey to Vancouver are getting calls that should be yours. Let's change that. Get in touch for a free chat about growing your business—no pressure, just a clear plan.</p>
+                 <a href="#" class="cta-button fade-in">Get My Google Ad Plan</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nirvana Canada. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Fade-in animation on scroll ---
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            // --- CTA Button Click Simulation ---
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#contact') {
+                       // Smooth scroll for internal links
+                       return;
+                    }
+                    e.preventDefault(); 
+                    console.log('CTA button clicked! This would typically open a contact form modal or scroll to a form.');
+                    alert('Thank you for your interest! In a real site, this would open a contact form.');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
 
